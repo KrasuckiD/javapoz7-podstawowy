@@ -20,7 +20,9 @@ public class WarmupVer2 {
             System.out.println("Area "+ area);
             System.out.println("Circut "+ circut);
             System.out.println("Avg "+ avg);
-        } 
+        } else {
+            System.out.println("Is not triangle");
+        }
 
 
     }
