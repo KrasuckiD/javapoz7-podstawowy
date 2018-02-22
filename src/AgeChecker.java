@@ -2,36 +2,49 @@ import java.util.Scanner;
 
 public class AgeChecker {
     public static void main(String[] args) {
-        //pobrać od usera liczbe
-        //jezeli wiek jest <6 powinienes isc do przedszkola
-        //jezeli wiek <12 powinienes isc do podstawowki
-        // <16 gimnazjum
-        // <20 srednia
-        // >20 studia
-        Scanner reader = new Scanner(System.in);
-        System.out.println("Podaj wiek:");
-        int wiek =reader.nextInt();
-        if (wiek < 6){
-            System.out.println("Powinieneś iść do przedszkola");
-        } else if (wiek <12) {
-            System.out.println("Powinieneś iść do podstawówki");
-        } else if (wiek < 16) {
-            System.out.println("Powinieneś iść do gimnazjum");
-        } else if (wiek <20) {
-            System.out.println("Powinieneś iść do liceum");
-        }else {
-            System.out.println("Na studia");
-        }
-        if (wiek >= 0 && (wiek <18 || wiek >= 65)) {
+        // pobrac od usera liczbe - jego wiek
+        // jezeli wiek < 6 "Powinienes isc do przedszkola"
+        // jezeli wiek < 12 "Powinienes isc do podstawowki
+        // jezeli wiek < 16 gimnzajum
+        // jezeli wiek < 20 srednia
+        // else uczelnia
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Insert your age: ");
+        int age = scanner.nextInt();
+
+        if (age < 6) {
+            System.out.println("Go to kindergarten");
+        } else if (age < 12) {
+            System.out.println("Go to primary school");
+        } else if (age < 16) {
+            System.out.println("Go to middle school");
+        } else if (age < 20) {
+            System.out.println("Go to high school");
+        } else {
+            System.out.println("Go to university");
         }
-        //1 wyświelic "a" jezeli wiek <30 i podzielny 3
-        //2 wyswietlic "b" jezeli wiek  mniejszy 15 lub wiekszy od 30 i muszi miecreszte z dzielenia 2
-        if (wiek >30 && (wiek %3 == 0)) {
+
+//        if (age < 6) {
+//            System.out.println("kindergarten");
+//        }
+//
+//        if (age >= 20 && age < 30) {
+//            System.out.println("Specific value");
+//        }
+//
+//        if (age >=0 && (age < 18 || age >= 65))
+
+        //1. wyswietlic wiadomosc "a" jezeli wiek jest wiekszy od 30 i podzielny przez 3
+        //2. wyswietlic wiadomosc "b" jezeli wiek mniejszy od 15 lub wiekszy od 60 i wiek / 5 ma reszte 2
+
+        if (age > 30 && age % 3 == 0) {
             System.out.println("a");
         }
-        if ((wiek < 15 || wiek > 60) && wiek % 5 == 2) {
+
+        if ((age < 15 || age > 60) && age % 5 == 2) {
             System.out.println("b");
         }
+
     }
 }

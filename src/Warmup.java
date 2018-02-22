@@ -2,23 +2,26 @@ import java.util.Scanner;
 
 public class Warmup {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner reader = new Scanner(System.in);
-        System.out.println("Wpisz pierwszą wartosc");
-        int firstValue = reader.nextInt();
-        System.out.println("Wpisz druga wartosc");
-        int secondValue = reader.nextInt();
-        System.out.println("Wpisz trzecia wartosc");
-        int thirdValue = reader.nextInt();
-        if (firstValue < secondValue && (secondValue < thirdValue)) {
-            System.out.println("Obwód " + (firstValue + secondValue + thirdValue));
+        System.out.println("Insert first value");
+        int a = scanner.nextInt();
+        System.out.println("Insert second value");
+        int b = scanner.nextInt();
+        System.out.println("Insert third value");
+        int c = scanner.nextInt();
+
+        if ((a + b > c && a + c > b && b + c > a) && (a * a + b * b == c * c)) {
+            double area = 0.5 * a * b;
+            int circuit = a + b + c;
+//            double avg = (double) circuit / 3;
+            double avg = circuit / 3.0;
+
+            System.out.println("Area = " + area);
+            System.out.println("Circuit = " + circuit);
+            System.out.println("Avg = " + avg);
+        } else {
+            System.out.println("Provided values are incorrect");
         }
-        if (firstValue < secondValue && (secondValue < thirdValue)) {
-            System.out.println("srednia dlugosc bokow " + ((firstValue + secondValue + thirdValue) / 3));
-        }
-
-
     }
-
-
 }
