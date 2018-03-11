@@ -8,9 +8,11 @@ public class WhileLoop {
 //        podajemy liczby tak dlugo az nie zostanie podane 0. wypisujemy najwieksza liczbe
         int value = 1;
         int maxValue = 0;
-        while (value != 0) {
+        while (value != 0)
+        {
             value = scanner.nextInt();
-            if (value > maxValue) {
+            if (value > maxValue)
+            {
                 maxValue = value;
             }
         }

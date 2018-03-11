@@ -40,19 +40,102 @@ public class Methods
         System.out.println("fibonacci array 6 = " + Arrays.toString(fibonacciArray(10)));
         System.out.println("reverse of \"abcdef\" = " + reverse("abcdef"));
         System.out.println("(a+b)" + isValidStatment("(a+b)"));
+        System.out.println("reversed array (1,2,3,4,5,6) = " + Arrays.toString(reverseArray(new int[]{1,2,3,4,5,6})));
+        System.out.println("tree of height 5 = \n" + tree(5));
+        System.out.println("compae " + compare("123", "123"));
+        System.out.println("Promary from 31 = " + primaryNumbersOf(31));
 
 
 
 
     }
 
+
+    public static String primaryNumbersOf (int number)
+    {
+        int []primaryNumbers = {1,2,3,5,7,11};
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = primaryNumbers.length - 1; i >= 0; i--) {
+            while (number >= primaryNumbers[i]){
+                number -= primaryNumbers[i];
+                stringBuilder.append(primaryNumbers[i]);
+                stringBuilder.append(" + ");
+            }
+        }
+        return stringBuilder.substring(0, stringBuilder.length() -2);
+    }
+
+
+    public static int compare (String text1, String text2)
+    {
+        int result = 0;
+        if ( text1.length() > text2.length())
+        {
+            result = 1;
+        } else if (text1.length() < text2.length())
+        {
+            result = -1;
+        } else
+        {
+            int i = 0;
+            while (i < text1.length() && result == 0)
+            {
+              if (text1.charAt(i) > text2.charAt(i))
+              {
+                  result = 1;
+              } else if (text1.charAt(i) < text2.charAt(i))
+              {
+                  result = -1;
+              }
+              i++;
+            }
+        }
+
+        return result;
+    }
+
+
+    public static String tree (int height)
+    {
+        StringBuilder treeBuilder = new StringBuilder();
+        for (int i = 0; i < height; i++)
+        {
+            for (int j = 0; j < height -1 -i; j++)
+            {
+                treeBuilder.append(" ");
+            }
+            for (int j = 0; j < 2 * i + 1; j++)
+            {
+                treeBuilder.append("*");
+            }
+            treeBuilder.append("\n");
+        }
+        return treeBuilder.toString();
+    }
+
+
+
+    public static int [] reverseArray ( int [] array)
+    {
+        int [] reversedArray = new int[array.length];
+        for (int i = 0; i < array.length; i++)
+        {
+            reversedArray[i] = array[array.length -1 - i];
+        }
+
+
+
+
+        return reversedArray;
+    }
+
+
+
     public static boolean isValidStatment (String statment)
     {
         char [] array = statment.toCharArray();
         int counter = 0;
         int i = 0;
-        char open = '(';
-        char close = ')';
         while (i < array.length)
         {
             if (array[i] == ')')

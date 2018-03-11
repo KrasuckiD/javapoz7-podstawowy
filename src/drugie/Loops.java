@@ -26,8 +26,10 @@ public class Loops {
         //2. wyswietlic tylko parzyste liczby od 1 do n
         System.out.println();
         System.out.println("Parzystosc liczb");
-        for (int i = 0; i < n; i++) {
-            if (i % 2 == 0) {
+        for (int i = 0; i < n; i++)
+        {
+            if (i % 2 == 0)
+            {
                 System.out.println(i + 2);
             }
         }
